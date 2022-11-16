@@ -6,6 +6,15 @@
 # # correct un-locking access and lock  when it finds 
 # the correct locking access code. 
 
+class SecurityEngine: 
+    
+    def __init__(self, input: str):
+        self.array = [None] * input
+        
+
+        
+    
+    
  
 
 

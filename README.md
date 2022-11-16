@@ -2,8 +2,8 @@
 The purpose of this project is to use Finite Automata concepts in solving real-life problems.
 
 # Author 
-Created by Mitansh Chaudhari 
-*Software Lincense: Public Domain, Anyone can use and change it or incorporate code from this software into an application 
+Created by Mitansh Chaudhari:  
+Software Lincense: Public Domain, Anyone can use and change it or incorporate code from this software into an application 
 
 # what does the program do?
 
