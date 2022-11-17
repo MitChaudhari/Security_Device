@@ -12,7 +12,6 @@ class SecurityEngine:
     def __init__(self):
         self.unlock_code = "204801"    #This is the unlcok code 
         self.lock_code = "204804"      # This is the lock code            
-        # self.current_state = ""        # This tells the state if it's lock or unlock
         self.Lock = False              # This informs of what state is lock in 
         self.UnLock = False            # This informs of what state is unlock in
         self.data = "1"
@@ -29,12 +28,6 @@ class SecurityEngine:
             self.data = userData
         else:
             self.data = input("Enter a Number: ")
-            
-
-
-            
-        
-        # self.data = inputData
 
     def currentState(self):
     
@@ -45,44 +38,42 @@ class SecurityEngine:
             for i in range(len(self.data)):
                 if self.data[i:i+6] == self.unlock_code:
                     self.UnLock = True 
+                    print("State = UnLock")
                     self.Lock = False 
                     self.unlock_state_counter += 1
                 if self.data[i:i+6] == self.lock_code:
                     self.Lock = True 
+                    print("State = Lock")
                     self.UnLock = False 
                     self.lock_state_counter+=1 
                     
             if self.UnLock:
-                print("State = UnLock")
                 if self.methodscheck != "":
                     self.data = "S"
                 else:
-                    self.data = input("To stop the Engine Press s or Now try to Lock the Engine: ")
+                    self.data = input("To stop the Engine, Press S or Try to Lock the Engine: ")
                 
             elif self.Lock:
-                print("State = Lock")
                 if self.methodscheck != "":
                     self.data = "S"
                 else:
-                    self.data = input("To stop the Engine Press s or Try to UnLock the Engine: ")
+                    self.data = input("To stop the Engine, Press S or Try to UnLock the Engine: ")
                 
-                # self.data = input("State = Lock\n" + "To stop the Engine Press s or Try to UnLock the Engine: ")
             else:
                 print("State = Unknown")
                 if self.methodscheck != "":
                     self.data = "S"
                 else:
                     self.data = input("To stop the Engine Press s or Try to UnLock or Lock the Engine: ")
-    
                 self.unknown_state_counter += 1
-            
-                
+                 
     def statsOfState(self): 
         
         self.total_state = self.unlock_state_counter+self.lock_state_counter+self.unknown_state_counter
         print("Out of " +str(self.total_state)+ " trys, you unlocked " + 
                         str(self.unlock_state_counter)+ " times and Locked " +
                         str(self.lock_state_counter)+ " times")
+    
         
         
             
