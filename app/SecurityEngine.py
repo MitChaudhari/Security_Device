@@ -1,6 +1,7 @@
 # CS330 A security Device Assignment Version 1, 11/15/2022
 # Created By: Mitansh Chaudahri 
 from pickle import FALSE
+import random
 
 # This class will implement Security Engine 
 # that will unlock the lock when it finds the 
@@ -73,71 +74,12 @@ class SecurityEngine:
         print("Out of " +str(self.total_state)+ " trys, you unlocked " + 
                         str(self.unlock_state_counter)+ " times and Locked " +
                         str(self.lock_state_counter)+ " times")
-    
         
-        
-            
-            
-########################################################################################################################
-######################################                                      ############################################
-######################################     Testing     the code             ############################################
-######################################                                      ############################################
-########################################################################################################################
-    
-        #6347987620480131420488204804366117780865122048011390389148
-                
-                    
-
-
-print("Testing:\n")
-
-testEngine = SecurityEngine()
-testEngine.setData("204801")
-testEngine.currentState()
-testEngine.statsOfState()
-print(" ")
-testEngine1 = SecurityEngine()
-testEngine1.setData("204804")
-testEngine1.currentState()
-testEngine1.statsOfState()
-print(" ")
-testEngine1 = SecurityEngine()
-testEngine1.setData("6347987642332131420488423324366117780865124233211390389148")
-testEngine1.currentState()
-testEngine1.statsOfState()
-print(" ")
-testEngine1 = SecurityEngine()
-testEngine1.setData("6347987620480131420488204804366117780865122048011390389148")
-testEngine1.currentState()
-testEngine1.statsOfState()
-print(" ")
-testEngine1 = SecurityEngine()
-testEngine1.setData()
-testEngine1.currentState()
-testEngine1.statsOfState()
 
 
 
 
 
-
-    
-        
-     
-            
-            
-    
-        
-        
-        
-        
-        
-        
-
-        
-    
-    
- 
 
 
 
