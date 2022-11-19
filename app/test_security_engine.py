@@ -9,8 +9,21 @@ class TestSetData(unittest.TestCase):
         testEngine = SecurityEngine()
         
         result = testEngine.setData("204801")
-        print("Here setData method is tested to check if the user data is collected properly.")
+        print("Here setData method is tested to check if the user data is collected properly: \n""result = testEngine.setData(204801)")
+        
         self.assertEqual(testEngine.data,"204801")
+        
+class TestCurrentState(unittest.TestCase):
+    def test_with_givenData(self): # This method will check the current state with predefined data not the user entered input data. 
+        testEngine2 = SecurityEngine()
+        testEngine2.setData("204801")
+        
+        print(testEngine2.currentState())
+        self.assertEqual(testEngine2.currentState(),testEngine2.state_checker())
+        
+        
+        
+
         
         
         

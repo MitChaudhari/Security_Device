@@ -16,13 +16,13 @@ class ranNumGen:
         bruteForce = SecurityEngine()
         NumSysmGen = 0
         for i in range(10):
-            while bruteForce.UnLock != True:
+            while bruteForce.main_unlock != True:
                 n = random.randint(0,1000000000) # This will generate a random num between 0 and 1 billion
                 bruteForce.setData(str(n))
                 bruteForce.currentState()
                 NumSysmGen+=1
             self.listOfNums.append(NumSysmGen)
-            bruteForce.UnLock = False
+            bruteForce.main_unlock = False
         self.listOfNums.sort()
         print(self.listOfNums)
         
@@ -46,7 +46,7 @@ class ranNumGen:
                 n = random.randint(0,1000000000) # This will generate a random num between 0 and 1 billion
                 bruteForce.setData(str(n))
                 bruteForce.currentState()
-                time.sleep(1)
+                # time.sleep(1)
             bruteForce.UnLock = False
             end = time.time()
             total_time = (math.trunc((end-start)))
@@ -76,10 +76,10 @@ class ranNumGen:
 ######################################     Testing     the code             ############################################
 ######################################                                      ############################################
 ########################################################################################################################
-# testRanGen = ranNumGen()
-# # testRanGen.bruteForce()
-# # testRanGen.resultsCheck()
-# testRanGen.waitAndCheck()
+testRanGen = ranNumGen()
+testRanGen.bruteForce()
+testRanGen.resultsCheck()
+# print(testRanGen.waitAndCheck())
 
 
 
