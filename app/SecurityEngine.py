@@ -75,9 +75,7 @@ class SecurityEngine:
                 else:
                     self.data = input("To stop the Engine, Press S or Try to UnLock the Lock: ")
                    
-            else:
-                self.unknown_state_counter += 1
-                
+            else:                
                 if self.main_unlock:
                     print("State = UnLock")
                     
@@ -90,6 +88,7 @@ class SecurityEngine:
                         self.data = input("To stop the Engine Press s or Try to Lock the Lock: ")
                     else:
                         self.data = input("To stop the Engine Press s or Try to UnLock the Lock: ")
+                self.unknown_state_counter += 1
                         
         return SecurityEngine.state_checker(self)
                          

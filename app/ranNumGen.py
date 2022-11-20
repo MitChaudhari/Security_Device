@@ -10,19 +10,16 @@ class ranNumGen:
         self.max_value = 0
         self. min_value = 0
         self.avg_value = 0 
-        
-        
-        
     
     def bruteForce(self, trials = None):
-        if trials == None:
+        if trials == None or trials <=1:
             trials = 5  #By Defualt run the program 5 times to get the Average
             
         bruteForce = SecurityEngine()
         NumSysmGen = 0
         for i in range(trials):
             while bruteForce.main_unlock != True:
-                n = random.randint(0,1000000000) # This will generate a random num between 0 and 1 million
+                n = random.randint(0,1000000000) # This will generate a random num between 0 and 1 Billion 
                 bruteForce.setData(str(n))
                 bruteForce.currentState()
                 NumSysmGen+=1
@@ -81,9 +78,10 @@ class ranNumGen:
 ######################################                                      ############################################
 ########################################################################################################################
 # testRanGen = ranNumGen()
-# # print(testRanGen.bruteForce())
-# # print(testRanGen.resultsCheck())
+# print(testRanGen.bruteForce())
+# print(testRanGen.resultsCheck())
 # testRanGen.WaitAndCheck()
+
 
 
 
