@@ -2,7 +2,6 @@
 # Created By: Mitansh Chaudahri 
 from pickle import FALSE, TRUE
 import random
-from test.sortperf import flush
 
 # This class will implement Security Engine 
 # that will unlock the lock when it finds the 
@@ -48,18 +47,21 @@ class SecurityEngine:
             for i in range(len(self.data)):
                 if self.data[i:i+6] == self.unlock_code:
                     self.UnLock = True 
-                    print("State = UnLock")
+                    print(("State = UnLock"))
                     self.Lock = False 
-                    self.unlock_state_counter += 1
                     self.main_unlock = True
                     self.main_lock = False
+                    self.unlock_state_counter += 1
+                    
+                    
                 if self.data[i:i+6] == self.lock_code:
+                    self.lock_state_counter+=1
                     self.Lock = True 
-                    print("State = Lock")
+                    print(("State = Lock"))
                     self.UnLock = False 
-                    self.lock_state_counter+=1 
                     self.main_unlock = False
                     self.main_lock = True
+                    
                     
             if self.UnLock:
                 if self.methodscheck != "":
@@ -67,8 +69,6 @@ class SecurityEngine:
                 else:
                     self.data = input("To stop the Engine, Press S or Try to Lock the Lock: ")
     
-                    
-                
             elif self.Lock:
                 if self.methodscheck != "":
                     self.data = "S"
@@ -76,61 +76,35 @@ class SecurityEngine:
                     self.data = input("To stop the Engine, Press S or Try to UnLock the Lock: ")
                    
             else:
+                self.unknown_state_counter += 1
+                
                 if self.main_unlock:
                     print("State = UnLock")
+                    
                 else:
                     print("State = Lock")
-                
                 if self.methodscheck != "":
                     self.data = "S"
                 else:
                     if self.main_unlock:
-                        self.data = input("To stop the Engine Press s or Try to Lock the Lock ")
+                        self.data = input("To stop the Engine Press s or Try to Lock the Lock: ")
                     else:
-                        self.data = input("To stop the Engine Press s or Try to UnLock the Lock ")
+                        self.data = input("To stop the Engine Press s or Try to UnLock the Lock: ")
                         
-                self.unknown_state_counter += 1
+        return SecurityEngine.state_checker(self)
+                         
+                        
+                
     
                             
                  
     def statsOfState(self): 
         
-        self.total_state = self.unlock_state_counter+self.lock_state_counter+self.unknown_state_counter
-        print("Out of " +str(self.total_state)+ " trys, you unlocked " + 
+        self.total_state = self.unlock_state_counter + self.lock_state_counter + self.unknown_state_counter
+        return(("Out of " +str(self.total_state)+ " trys, you unlocked " + 
                         str(self.unlock_state_counter)+ " times and Locked " +
-                        str(self.lock_state_counter)+ " times")
+                        str(self.lock_state_counter)+ " times"))
         
         
         
-        
-        
-        
-        
-        
-        
-# print("Testing:\n")
-#
-# testEngine = SecurityEngine()
-# testEngine.setData("204801")
-# testEngine.currentState()
-# testEngine.statsOfState()
-# print(" ")
-# testEngine1 = SecurityEngine()
-# testEngine1.setData("204804")
-# testEngine1.currentState()
-# testEngine1.statsOfState()
-# print(" ")
-# testEngine2 = SecurityEngine()
-# testEngine2.setData("2048042323232320480132323232204804")
-# testEngine2.currentState()
-# testEngine2.statsOfState()
-# print(" ")
-# testEngine3 = SecurityEngine()
-# testEngine3.setData("wqeqw")
-# testEngine3.currentState()
-# testEngine3.statsOfState()
-#
-# testEngine4 = SecurityEngine()
-# testEngine4.setData()
-# testEngine4.currentState()
-# testEngine4.statsOfState()
+

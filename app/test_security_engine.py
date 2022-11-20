@@ -8,22 +8,80 @@ class TestSetData(unittest.TestCase):
     def test_with_paramerter(self):
         testEngine = SecurityEngine()
         
-        result = testEngine.setData("204801")
-        print("Here setData method is tested to check if the user data is collected properly: \n""result = testEngine.setData(204801)")
-        
+        testEngine.setData("204801")
         self.assertEqual(testEngine.data,"204801")
+       
+        testEngine.setData("204804")
+        self.assertEqual(testEngine.data,"204804")
         
+        testEngine.setData("31231231231231231231232131231145676543456789098765434567890987654")
+        self.assertEqual(testEngine.data,"31231231231231231231232131231145676543456789098765434567890987654")
+        
+        testEngine.setData("-1234234234")
+        self.assertEqual(testEngine.data,"-1234234234")
+        
+        testEngine.setData("mitanshchaudhari")
+        self.assertEqual(testEngine.data,"mitanshchaudhari")
+    
 class TestCurrentState(unittest.TestCase):
     def test_with_givenData(self): # This method will check the current state with predefined data not the user entered input data. 
         testEngine2 = SecurityEngine()
-        testEngine2.setData("204801")
+        testEngine3 = SecurityEngine()
+        testEngine4 = SecurityEngine()
+        testEngine5 = SecurityEngine()
+        testEngine6 = SecurityEngine()
         
-        print(testEngine2.currentState())
+        
+        testEngine2.setData("204801")
         self.assertEqual(testEngine2.currentState(),testEngine2.state_checker())
         
+        testEngine3.setData("204804")
+        self.assertEqual(testEngine3.currentState(),testEngine3.state_checker())
+        
+        testEngine4.setData("204804204801204804")
+        self.assertEqual(testEngine4.currentState(),testEngine4.state_checker())
+        
+        testEngine4.setData("3242349239492392393293299329329329329493921293912939192931929319293")
+        self.assertEqual(testEngine4.currentState(),testEngine4.state_checker())
+        
+        testEngine5.setData("mitanshchaudhari")
+        self.assertEqual(testEngine5.currentState(),testEngine5.state_checker())
+        
+        testEngine6.setData("20480123223423423")
+        self.assertEqual(testEngine6.currentState(),testEngine6.state_checker())
         
         
-
+class TestStatsOfState(unittest.TestCase):
+   
+    def test_the_format_with_no_data(self):
+        testEngine3 = SecurityEngine()
+        self.assertEqual(testEngine3.statsOfState(), "Out of 0 trys, you unlocked 0 times and Locked 0 times")
+        
+    def test_the_format_with_data(self):
+        testEngine = SecurityEngine()
+        testEngine.setData("204801")
+        testEngine.currentState()
+        self.assertEqual(testEngine.statsOfState(), "Out of 1 trys, you unlocked 1 times and Locked 0 times")
+        
+        testEngine2 = SecurityEngine()
+        testEngine2.setData("204804")
+        testEngine2.currentState()
+        self.assertEqual(testEngine2.statsOfState(), "Out of 1 trys, you unlocked 0 times and Locked 1 times")
+        
+        testEngine3 = SecurityEngine()
+        testEngine3.setData("204801204804204801")
+        testEngine3.currentState()
+        self.assertEqual(testEngine3.statsOfState(), "Out of 3 trys, you unlocked 2 times and Locked 1 times")
+        
+        testEngine4 = SecurityEngine()
+        testEngine4.setData("6347987620480131420488204804366117780865122048011390389148204801")
+        testEngine4.currentState()
+        self.assertEqual(testEngine4.statsOfState(), "Out of 4 trys, you unlocked 3 times and Locked 1 times")
+        
+        testEngine5 = SecurityEngine()
+        testEngine5.setData("mitanshchaudhari")
+        testEngine5.currentState()
+        self.assertEqual(testEngine5.statsOfState(), "Out of 1 trys, you unlocked 0 times and Locked 0 times")
         
         
         
