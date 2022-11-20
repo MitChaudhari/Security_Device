@@ -19,7 +19,7 @@ class TestResultsCheck(unittest.TestCase):
         testRanGen3.bruteForce()
         self.assertEqual(testRanGen3.resultsCheck(), "The Minimum tries to Unlock: " + str(testRanGen3.min_value)+"\n" 
               + "The Maximum tries to Unlock: " + str(testRanGen3.max_value)+"\n"
-              + "The Average tries to Unlock " + str(testRanGen3.avg_value))
+              + "The Average tries to Unlock: " + str(testRanGen3.avg_value))
         
         
 if __name__ == '__main__':

@@ -41,7 +41,7 @@ class SecurityEngine:
     def currentState(self):
     
         while self.data not in ("S", "s"):
-            self.Lock = False              # This informs of what state is lock in 
+            self.Lock = False             # resetting the check Condition  
             self.UnLock = False
             
             for i in range(len(self.data)):

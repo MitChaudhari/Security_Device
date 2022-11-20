@@ -18,4 +18,3 @@ print(" ")
 print("Lets brute force the system with 2 trials\n"+ str(testRanGen.listOfNums)+"\n"+str(testRanGen.resultsCheck()))
 print(" ")
 print("Lets brute force the system with 5 trials\nDefault trails is set to five therefore no parameter needed.\n"+ str(testRanGen2.listOfNums)+"\n"+str(testRanGen2.resultsCheck()))
-

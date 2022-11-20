@@ -1,3 +1,11 @@
+# CS330 A security Device Assignment Version 1, 11/15/2022
+# Created By: Mitansh Chaudahri 
+
+# This class will implement Random number generation for the Security Engine.  
+# That will unlock the lock when it finds the 
+# correct un-locking access and lock when it finds 
+# the correct locking access code. 
+
 from SecurityEngine import *
 import time
 import sys
@@ -34,7 +42,7 @@ class ranNumGen:
         self.avg_value = 0 if len(self.listOfNums) == 0 else sum(self.listOfNums)/len(self.listOfNums)
         return("The Minimum tries to Unlock: " + str(self.min_value)+"\n" 
               + "The Maximum tries to Unlock: " + str(self.max_value)+"\n"
-              + "The Average tries to Unlock " + str(self.avg_value))
+              + "The Average tries to Unlock: " + str(self.avg_value))
         
             
     def WaitAndCheck(self):
@@ -44,7 +52,7 @@ class ranNumGen:
         for i in range(3):
             start = time.time()
             while bruteForce.main_unlock != True:
-                n = random.randint(0,1000000000000) # This will generate a random num between 0 and 1 billion
+                n = random.randint(0,1000000000) # This will generate a random num between 0 and 1 billion
                 bruteForce.setData(str(n))
                 bruteForce.currentState()
                 time.sleep(1)
@@ -59,19 +67,7 @@ class ranNumGen:
         self.avg_value=(math.trunc(self.avg_value))
         return("The Average tries to Unlock " + str(self.avg_value) +" seconds")
         
-      
-
-    
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
+   
 ########################################################################################################################
 ######################################                                      ############################################
 ######################################     Testing     the code             ############################################
@@ -80,9 +76,4 @@ class ranNumGen:
 # testRanGen = ranNumGen()
 # print(testRanGen.bruteForce())
 # print(testRanGen.resultsCheck())
-# testRanGen.WaitAndCheck()
-
-
-
-
-
+# print(testRanGen.WaitAndCheck())
