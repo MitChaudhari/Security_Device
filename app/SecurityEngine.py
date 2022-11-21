@@ -36,7 +36,7 @@ class SecurityEngine:
         if userData != "":
             self.data = userData
         else:
-            self.data = input("Enter a Number: ")
+            self.data = input("Enter the Passcode: ")
 
     def currentState(self):
     
