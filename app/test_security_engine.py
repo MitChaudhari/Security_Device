@@ -24,7 +24,7 @@ class TestSetData(unittest.TestCase):
         self.assertEqual(testEngine.data,"mitanshchaudhari")
     
 class TestCurrentState(unittest.TestCase):
-    def test_with_givenData(self): # This method will check the current state with predefined data not the user entered input data. 
+    def test_with_setData(self): # This method will check the current state with predefined data not the user entered input data. 
         testEngine2 = SecurityEngine()
         testEngine3 = SecurityEngine()
         testEngine4 = SecurityEngine()
@@ -33,6 +33,9 @@ class TestCurrentState(unittest.TestCase):
         
         
         testEngine2.setData("204801")
+        self.assertEqual(testEngine2.currentState(),testEngine2.state_checker())
+        
+        testEngine2.setData("204802")
         self.assertEqual(testEngine2.currentState(),testEngine2.state_checker())
         
         testEngine3.setData("204804")
@@ -49,6 +52,23 @@ class TestCurrentState(unittest.TestCase):
         
         testEngine6.setData("20480123223423423")
         self.assertEqual(testEngine6.currentState(),testEngine6.state_checker())
+        
+    def test_with_userData(self):
+        testEngine = SecurityEngine()
+        print("Below you will be asked to Enter the Passcode, please enter: 204801")
+        print("After you enter 204801, please enter: 204804")
+        print("After you enter 204804, please enter: CS3330")
+        print("After you enter CS3330, please enter: 204801")
+        print("After you enter 204801, please enter: lasttry")
+        print("After you enter lasttry, please enter: s")
+        testEngine.setData()
+        self.assertEqual(testEngine.currentState(),testEngine.state_checker())
+   
+        
+        
+        
+        
+        
         
         
 class TestStatsOfState(unittest.TestCase):
