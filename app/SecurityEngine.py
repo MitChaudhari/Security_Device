@@ -92,11 +92,6 @@ class SecurityEngine:
                         
         return SecurityEngine.state_checker(self)
                          
-                        
-                
-    
-                            
-                 
     def statsOfState(self): 
         
         self.total_state = self.unlock_state_counter + self.lock_state_counter + self.unknown_state_counter
