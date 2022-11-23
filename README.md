@@ -33,7 +33,7 @@ if not installed, please download the latest version from https://www.python.org
 5. To execute the InterfaceSecurityEngine.py file, type: **python InterfaceSecurityEngine.py**
      * Please follow the instructions on the screen after InterfaceSecurityEngine.py is executed. This interface will explain and show you the functionality of the first half of the program. When finished executing the file, type **clear**   
 6. While still in the app folder at the terminal, type **ls** to see the files in the app. Now let us execute the InterfaceRanNumGen.py file, type: **python InterfaceRanNumGen.py**
-     * Please follow the instructions on the screen after InterfaceRanNumGen.py is executed. This interface will show you how a random number generator is used to unlock the engine. Here you will interact with the program to test the last half of the project.
+     * Please follow the instructions on the screen after InterfaceRanNumGen.py is executed. Please allow about 30 sec for this to run. This interface will show you how a random number generator is used to unlock the engine. Here you will interact with the program to test the last half of the project.
      
 7. Please repeat steps 5 and 6 as many times as you like to test and understand the program's functionality. When finished with the interface files and ready to move on to unit test coverage, type **clear** 
   
