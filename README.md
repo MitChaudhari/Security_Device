@@ -29,7 +29,7 @@ Software Lincense: Public Domain, Anyone can use and change it or incorporate co
 if not installed, please download the latest version from https://www.python.org/downloads/
 3. We will not create a standalone executable of the Python scripts using the PyInstaller because that will limit user interaction. Therefore I've made two interface python files that will allow you to interact with the program and see the functionality of SecurityEngine.py and ranNumGen.py(Two primary files containing the program).
 4. In the terminal, open the app folder of the cloned repo using the cd command. For example mine is:
-     * cd documents -> cd GitHub -> cd Security_Device -> cd app, now type ls to see all the Python files in the app folder
+     * **cd documents** -> **cd GitHub** -> **cd Security_Device** -> **cd app**, now type **ls** to see all the Python files in the app folder
 5. To execute the InterfaceSecurityEngine.py file, type: **python InterfaceSecurityEngine.py**
      * Please follow the instructions on the screen after InterfaceSecurityEngine.py is executed. This interface will explain and show you the functionality of the first half of the program. When finished executing the file, type **clear**   
 6. While still in the app folder at the terminal, type **ls** to see the files in the app. Now let us execute the InterfaceRanNumGen.py file, type: **python InterfaceRanNumGen.py**
@@ -44,17 +44,19 @@ Coverage test for Python from the terminal(linux Insturctions):
 
 1.  If the app folder of my project is not already opened in your terminal, open the app folder of the cloned repo using the cd command. For example, mine is:
 		* **cd documents** -> **cd GitHub** -> **cd Security_Device** -> **cd app**, now type **ls** to see all the Python files in the app folder
-2. Type this into your terminal to install test coverage: **pip install coverage** 
-3. Let us generate unit test coverage for the Security_Device.py file(AKA the first part of the project), type: **coverage run test_security_engine.py**
+2. Lets install pip: enter this link: **curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py** After that command has finished running type: **python3 get-pip.py** 
+
+3. Type this into your terminal to install test coverage: **pip install coverage** 
+4. Let us generate unit test coverage for the Security_Device.py file(AKA the first part of the project), type: **coverage run test_security_engine.py**
      * You will be asked to enter five passcodes that are given; please follow the instructions when the program runs so that we can validate every method of the SecurityEngine.py.
      After you finish running the program, To see the Coverage report of test_security_engine.py type: **coverage report**
      * The Coverage report of the test_security_engine.py should be 100% if all steps were followed as instructed in the program
-4. We can repeat step 3 to see the unit test coverage for ranNumGen.py(AKA the last half of the project) 
+5. We can repeat step 3 to see the unit test coverage for ranNumGen.py(AKA the last half of the project) 
      * Type: **coverage run test_ranNumGen.py** (side note: please wait about 80 seconds for the Coverage test to run)
      * To see the Coverage report type: **coverage report**
      * Please note the coverage for ranNum.py is 93% because we did not test a few methods of the SecurityEngine.py. We have already tested those methods in previous coverage tests.
      
-5. That concludes generating unit test coverage.
+6. That concludes generating unit test coverage.
 
 # The Platform it's been tested on: 
 This program was build using Python on Eclipse. The program has been test on Eclipse and the Terminal Command Line.  
