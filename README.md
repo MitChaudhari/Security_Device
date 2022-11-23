@@ -44,8 +44,7 @@ Coverage test for Python from the terminal(linux Insturctions):
 
 1.  If the app folder of my project is not already opened in your terminal, open the app folder of the cloned repo using the cd command. For example, mine is:
 		* **cd documents** -> **cd GitHub** -> **cd Security_Device** -> **cd app**, now type **ls** to see all the Python files in the app folder
-2. Lets install pip: enter this link: **curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py** After that command has finished running type: **python3 get-pip.py** 
-
+2. pip should have been installed when you downloaded Python therfore no need to re-download, but just in case if you need it: **curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py** Then **python3 get-pip.py**
 3. Type this into your terminal to install test coverage: **pip install coverage** 
 4. Let us generate unit test coverage for the Security_Device.py file(AKA the first part of the project), type: **coverage run test_security_engine.py**
      * You will be asked to enter five passcodes that are given; please follow the instructions when the program runs so that we can validate every method of the SecurityEngine.py.
