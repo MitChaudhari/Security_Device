@@ -114,5 +114,9 @@ python3 -m pip install coverage
 ## Screenshots
 
 ### Terminal View
+#### InterfaceSecurityEngine.py
 ![InterfaceSecurityEngine.py](https://github.com/MitChaudhari/Security_Device/raw/main/assets/run1.png)
+
+#### InterfaceRanNumGen.py
 ![InterfaceRanNumGen.py](https://github.com/MitChaudhari/Security_Device/raw/main/assets/run2.png)
+---
