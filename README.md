@@ -15,7 +15,7 @@ License: Public Domain - Anyone can use, modify, or incorporate code from this s
 3. [How to Build and Run](#how-to-build-and-run)
 4. [Generating Unit Test Coverage](#generating-unit-test-coverage)
 5. [Platform Tested On](#platform-tested-on)
-
+6. [Screenshots](#screenshots)
 ---
 
 ## Introduction
@@ -112,11 +112,11 @@ python3 -m pip install coverage
 ---
 
 ## Screenshots
-
 ### Terminal View
 #### InterfaceSecurityEngine.py
 ![InterfaceSecurityEngine.py](https://github.com/MitChaudhari/Security_Device/raw/main/assets/run1.png)
 
 #### InterfaceRanNumGen.py
 ![InterfaceRanNumGen.py](https://github.com/MitChaudhari/Security_Device/raw/main/assets/run2.png)
+
 ---
