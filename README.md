@@ -56,7 +56,7 @@ The project is divided into two parts:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourUsername/Security_Device.git
+   git clone https://github.com/MitChaudhari/Security_Device.git
    ```
 2. Install Python 3 if not already installed:
    ```bash
